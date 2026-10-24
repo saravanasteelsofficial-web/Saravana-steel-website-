@@ -1,232 +1,397 @@
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Saravana Steel Company</title>
+<meta name="theme-color" content="#0b1730">
+<link rel="icon" type="image/png" href="saravana-steel-logo.png">
+<link rel="apple-touch-icon" href="saravana-steel-logo.png">
+<meta name="description" content="Saravana Steel Company - Steel, Cement and Paint">
+<title>Saravana Steel Company | Steel, Cement & Paint</title>
+
 <style>
+:root{--navy:#0b1730;--blue:#123b68;--bright:#2877c7;--ink:#142238;--muted:#65748a;--bg:#f5f8fc;--line:#e2e9f1;--green:#16864a}
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f4f6fa;color:#172337}
-header{background:#102b46;color:white;padding:14px 5%;display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:0;z-index:10}
-.brand{font-size:19px;font-weight:bold}
-.brand small{display:block;font-size:11px;color:#b8d4ec;margin-top:5px}
-nav{display:flex;gap:8px;align-items:center}
-nav button{border:0;border-radius:8px;padding:10px;background:#234563;color:white;font-weight:bold;cursor:pointer}
-nav button.active{background:#f4bd50;color:#102b46}
-main{max-width:1100px;margin:auto;padding:22px 15px}
-.page{display:none}.page.active{display:block}
-.hero{background:linear-gradient(125deg,#102b46,#17669a);color:white;padding:35px 22px;border-radius:17px}
-.hero h1{font-size:30px;margin:0 0 12px}
-.hero p{line-height:1.7;color:#e2edf7}
-.btn{display:inline-block;border:0;border-radius:8px;padding:12px 17px;background:#f4bd50;color:#172337;font-weight:bold;cursor:pointer}
-.section-title{margin:25px 0 14px}
-.categories,.products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.category,.product,.cart-item{background:white;border:1px solid #e2e7ee;border-radius:13px;padding:12px}
-.category{cursor:pointer;text-align:center}
-.category img{width:100%;height:125px;object-fit:cover;border-radius:9px}
-.product img{width:100%;height:145px;object-fit:cover;border-radius:9px;background:#eee}
-.product h3{font-size:16px;margin:12px 0 7px}
-.muted{font-size:13px;color:#687789;line-height:1.5}
-.price{font-weight:bold;font-size:18px;margin:10px 0}
-.product button{width:100%}
-.actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:12px}
-input,select{padding:11px;border:1px solid #ccd5df;border-radius:8px;font-size:15px}
-footer{text-align:center;padding:22px;background:#102b46;color:white;margin-top:30px;font-size:13px}
-.back{margin-bottom:15px;background:#e3ebf3;color:#102b46}
-.cart-item{margin:12px 0;display:flex;justify-content:space-between;gap:10px;align-items:center}
-.cart-item button{border:0;background:#fee9e7;color:#a32620;padding:8px;border-radius:7px}
-@media(max-width:600px){
- header{padding:12px;align-items:flex-start;flex-direction:column}
- nav{width:100%;display:grid;grid-template-columns:1fr 1.5fr 1fr}
- nav button{padding:10px 4px;font-size:12px}
- main{padding:14px 10px}
- .hero{padding:25px 17px}.hero h1{font-size:25px}
- .categories,.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
- .category,.product{padding:8px}
- .category img{height:100px}.product img{height:110px}
- .product h3{font-size:14px}.price{font-size:16px}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+a{text-decoration:none;color:inherit}
+.wrap{width:min(1160px,92%);margin:auto}
+header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:10}
+.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:14px}
+.logo{width:54px;height:54px;object-fit:contain;background:#05070a;border-radius:8px}
+.brand small{display:block;color:#b8c9dd;font-size:11px;font-weight:500;letter-spacing:1px}
+nav{display:flex;align-items:center;gap:20px;font-size:14px}
+nav a:hover{color:#8bc6ff}
+#cartCount{background:#2877c7;border-radius:20px;padding:2px 7px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 17px;border-radius:10px;font-weight:700;font-size:14px;border:0;cursor:pointer}
+.btn-primary{background:white;color:var(--navy)}
+.btn-blue{background:var(--bright);color:white}
+.btn-green{background:var(--green);color:white}
+.hero{background:linear-gradient(120deg,#0b1730,#123b68,#1b5684);color:white}
+.hero-inner{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:35px;padding:65px 0}
+.eyebrow,.kicker{font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#80bfff}
+h1{font-size:clamp(36px,5vw,60px);line-height:1.08;margin:18px 0}
+.hero p{color:#d6e4f4;font-size:16px}
+.hero-art{display:grid;place-items:center}
+.steel-orb{width:min(330px,80vw);aspect-ratio:1;background:#05070a url("saravana-steel-logo.png") center/contain no-repeat;border-radius:16px;box-shadow:0 20px 45px #0005}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+section{padding:65px 0}
+.section-head{text-align:center;max-width:700px;margin:0 auto 30px}
+h2{font-size:clamp(27px,3vw,38px);color:var(--navy);margin:10px 0}
+.section-head p,.muted{color:var(--muted)}
+.trust-strip{background:white;border-bottom:1px solid var(--line)}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;padding:20px 0}
+.trust-item{font-weight:700;color:var(--blue);text-align:center}
+.categories,.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.product-card,.catalog-card,.contact-card,.cart-panel,.enquiry-box,.why-item{background:white;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.product-card{display:flex;flex-direction:column}
+.product-visual{height:170px;display:grid;place-items:center;overflow:hidden;background:linear-gradient(135deg,#e7eff7,#c7d6e5)}
+.product-visual.cement{background:linear-gradient(135deg,#eef1f4,#c5cdd6)}
+.product-visual.paint{background:linear-gradient(135deg,#e6f2ff,#c6e0fb)}
+.rods{display:flex;gap:8px;transform:rotate(-18deg)}
+.rod{width:15px;height:140px;border-radius:8px;background:repeating-linear-gradient(0deg,#8799aa 0 5px,#d0d9e2 5px 9px)}
+.bags,.cans{display:flex;gap:12px;align-items:end}
+.bag{width:75px;height:110px;background:linear-gradient(90deg,#a9b2bb,#f3f5f7,#b6c0c9);border:1px solid #9aa7b3;border-radius:5px;display:grid;place-items:center;color:#34495c;font-size:10px;font-weight:bold;text-align:center}
+.can{width:55px;height:100px;border-radius:8px;background:linear-gradient(90deg,#174b7d,#3185c8,#0d3a66)}
+.can:nth-child(2){height:125px;background:linear-gradient(90deg,#d8e3ed,#fff,#9bb4ca)}
+.can:nth-child(3){height:90px;background:linear-gradient(90deg,#bf7422,#f6bd57,#9c5b1c)}
+.card-body{padding:20px;display:flex;flex-direction:column;flex:1}
+.card-body h3{margin:0;color:var(--navy);font-size:21px}
+.card-body p{font-size:14px;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px}
+.tag{background:#f0f5fa;color:#3c5873;border-radius:6px;padding:5px 8px;font-size:11px;font-weight:bold}
+.card-body .btn{margin-top:auto}
+.catalog-section{background:#f5f8fc}
+.catalog-tools{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:22px}
+.category-tabs{display:flex;gap:8px;flex-wrap:wrap}
+.category-tab{border:1px solid #d5e0eb;background:white;color:var(--navy);padding:10px 15px;border-radius:30px;font-weight:bold;cursor:pointer}
+.category-tab.active{background:var(--navy);color:white}
+.catalog-search{padding:11px 14px;border:1px solid #ccd8e4;border-radius:10px;font:inherit;min-width:220px}
+.catalog-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.catalog-card{display:flex;flex-direction:column}
+.catalog-image{height:165px;display:grid;place-items:center;background:#e9f1f9;overflow:hidden}
+.catalog-image .product-visual{width:100%;height:100%}
+.catalog-info{padding:17px;display:flex;flex-direction:column;gap:8px;flex:1}
+.catalog-info h3{margin:0;color:var(--navy);font-size:18px}
+.catalog-info p{margin:0;color:var(--muted);font-size:13px}
+.catalog-meta{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:#52657a}
+.ask-price{font-weight:bold;color:var(--blue)}
+.add-cart-row{display:flex;gap:8px;margin-top:auto;padding-top:8px}
+.qty-input{width:65px;padding:10px;border:1px solid #ccd8e4;border-radius:8px}
+.add-cart-row .btn{flex:1}
+.cart-section,.why{background:#edf3f9}
+.cart-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:start}
+.cart-panel,.enquiry-box{padding:20px}
+.cart-line{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;padding:13px 0;border-bottom:1px solid var(--line)}
+.cart-line b{display:block;color:var(--navy)}
+.cart-line small{color:var(--muted)}
+.cart-line button{border:0;background:#fff0f0;color:#a22;padding:7px;border-radius:7px;cursor:pointer}
+.cart-total{display:flex;justify-content:space-between;align-items:center;padding-top:16px}
+.empty-cart{color:var(--muted)}
+.order-form label,.enquiry-box label{display:block;font-size:13px;font-weight:bold;margin:12px 0 6px}
+.order-form input,.order-form textarea,.enquiry-box input,.enquiry-box select,.enquiry-box textarea{width:100%;padding:12px;border:1px solid #ccd8e4;border-radius:9px;font:inherit;background:white}
+.order-form .btn,.enquiry-box .btn{width:100%;margin-top:15px}
+.order-note{font-size:11px;color:var(--muted)}
+.why-grid{gap:18px}
+.why-item{padding:22px}
+.why-item h3{color:var(--navy)}
+.why-item p{font-size:14px;color:var(--muted)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.contact-card{padding:25px}
+.contact-line{margin:16px 0;color:var(--muted)}
+.contact-line b{display:block;color:var(--ink)}
+.cta{padding:0 0 65px;background:#edf3f9}
+.cta-panel{background:linear-gradient(120deg,#0b1730,#174d7d);color:white;border-radius:20px;padding:32px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.cta-panel h2{color:white;margin:0}
+footer{background:#081326;color:#d3deea;padding:25px 0;font-size:13px}
+.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.footer-muted{color:#8fa3ba}
+body.view-products main>section:not(#catalog),body.view-products main>.trust-strip,body.view-products main>.cta{display:none}
+body.view-cart main>section:not(#cart),body.view-cart main>.trust-strip,body.view-cart main>.cta{display:none}
+body.view-products #catalog,body.view-cart #cart{display:block;min-height:65vh}
+@media(max-width:800px){
+ .nav{align-items:center;flex-wrap:wrap;padding:10px 0}
+ .logo{width:45px;height:45px}
+ .brand{font-size:12px}
+ nav{gap:12px;font-size:12px;flex-wrap:wrap}
+ nav a:nth-child(4),nav a:nth-child(5){display:none}
+ .hero-inner{grid-template-columns:1fr;padding:45px 0}
+ .steel-orb{width:230px}
+ .trust-grid,.categories,.why-grid,.catalog-grid,.cart-layout,.contact-grid{grid-template-columns:1fr}
+ section{padding:48px 0}
+ .catalog-search{width:100%;min-width:0}
+ .category-tab{flex:1;padding:9px}
+ .cart-line{grid-template-columns:1fr auto}
+ .cart-line button{grid-column:2}
+ .cta-panel{align-items:flex-start;flex-direction:column}
 }
 </style>
 </head>
-<body>
 
+<body>
 <header>
-  <div class="brand">SSC | SARAVANA STEEL
-    <small>STEEL • CEMENT • PAINT</small>
-  </div>
+ <div class="wrap nav">
+  <a class="brand" href="#home" onclick="setPage('home')">
+   <img class="logo" src="saravana-steel-logo.png" alt="Saravana Steel Company logo">
+   <span>SARAVANA STEEL COMPANY<small>Steel · Cement · Paint</small></span>
+  </a>
   <nav>
-    <button id="homeNav" class="active" onclick="showPage('home')">Home</button>
-    <button id="productsNav" onclick="showPage('products')">Products Listing</button>
-    <button id="cartNav" onclick="showPage('cart')">🛒 Cart (<span id="cartCount">0</span>)</button>
+   <a href="#home" onclick="setPage('home')">Home</a>
+   <a href="#catalog" onclick="setPage('products')">Products Listing</a>
+   <a href="#cart" onclick="setPage('cart')">Cart <span id="cartCount">0</span></a>
+   <a href="#about" onclick="setPage('home','about')">About</a>
+   <a href="#contact" onclick="setPage('home','contact')">Contact</a>
   </nav>
+ </div>
 </header>
 
 <main>
-  <section id="home" class="page active">
-    <div class="hero">
-      <p>WELCOME TO SARAVANA STEEL COMPANY</p>
-      <h1>Build Your Dream With Us</h1>
-      <p>Steel, cement and paint for your construction needs. Explore our product categories and send your order directly through WhatsApp.</p>
-      <button class="btn" onclick="showPage('products')">Explore Products →</button>
-    </div>
+<section class="hero" id="home">
+ <div class="wrap hero-inner">
+  <div>
+   <span class="eyebrow">Your construction materials partner</span>
+   <h1>Build strong.<br>Build with confidence.</h1>
+   <p>Your destination for steel, cement and paint for construction needs. Request the latest price directly on WhatsApp.</p>
+   <div class="hero-actions">
+    <a class="btn btn-primary" href="#catalog" onclick="setPage('products')">Products Listing ↓</a>
+    <a class="btn btn-green" href="#contact" onclick="setPage('home','contact')">Ask Price on WhatsApp</a>
+   </div>
+   <p>Prices and availability may change. Contact us for today's rates.</p>
+  </div>
+  <div class="hero-art"><div class="steel-orb" aria-label="Saravana Steel Company logo"></div></div>
+ </div>
+</section>
 
-    <h2 class="section-title">Shop By Category</h2>
-    <div class="categories">
-      <div class="category" onclick="openCategory('Steel')">
-        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=500&q=80" alt="Steel">
-        <h3>Steel</h3><p class="muted">TMT bars and steel products</p>
-      </div>
-      <div class="category" onclick="openCategory('Cement')">
-        <img src="https://images.unsplash.com/photo-1513467655676-561b7d489a88?auto=format&fit=crop&w=500&q=80" alt="Cement">
-        <h3>Cement</h3><p class="muted">Cement for construction</p>
-      </div>
-      <div class="category" onclick="openCategory('Paint')">
-        <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=500&q=80" alt="Paint">
-        <h3>Paint</h3><p class="muted">Paints and wall finishes</p>
-      </div>
-    </div>
-    <div class="actions">
-      <button class="btn" onclick="showPage('products')">View All Products</button>
-    </div>
-  </section>
+<div class="trust-strip"><div class="wrap trust-grid">
+ <div class="trust-item">Steel for construction</div>
+ <div class="trust-item">Cement for every stage</div>
+ <div class="trust-item">Paint for finishing</div>
+</div></div>
 
-  <section id="products" class="page">
-    <button class="btn back" onclick="showPage('home')">← Home</button>
-    <h2>Products Listing</h2>
-    <p class="muted">Choose a category to view products.</p>
-    <div class="actions">
-      <button class="btn" onclick="openCategory('All')">All</button>
-      <button class="btn" onclick="openCategory('Steel')">Steel</button>
-      <button class="btn" onclick="openCategory('Cement')">Cement</button>
-      <button class="btn" onclick="openCategory('Paint')">Paint</button>
-    </div>
-    <div id="productList" class="products" style="margin-top:18px"></div>
-  </section>
+<section id="products">
+ <div class="wrap">
+  <div class="section-head"><span class="kicker">Our product range</span><h2>Shop by category</h2><p>Choose a category to see products separately.</p></div>
+  <div class="categories">
+   <article class="product-card">
+    <div class="product-visual"><div class="rods"><span class="rod"></span><span class="rod"></span><span class="rod"></span><span class="rod"></span><span class="rod"></span></div></div>
+    <div class="card-body"><h3>Steel</h3><p>TMT bars and steel products for foundations, columns, beams and slabs.</p><div class="tags"><span class="tag">TMT Bars</span><span class="tag">Construction Steel</span></div><button class="btn btn-blue" onclick="openCategory('Steel')">View Steel Products</button></div>
+   </article>
+   <article class="product-card">
+    <div class="product-visual cement"><div class="bags"><div class="bag">CEMENT</div><div class="bag">CEMENT</div></div></div>
+    <div class="card-body"><h3>Cement</h3><p>Cement options for foundation, brickwork, plastering and concrete work.</p><div class="tags"><span class="tag">Cement Bags</span><span class="tag">Different Brands</span></div><button class="btn btn-blue" onclick="openCategory('Cement')">View Cement Products</button></div>
+   </article>
+   <article class="product-card">
+    <div class="product-visual paint"><div class="cans"><div class="can"></div><div class="can"></div><div class="can"></div></div></div>
+    <div class="card-body"><h3>Paint</h3><p>Interior and exterior paint options for your building needs.</p><div class="tags"><span class="tag">Interior</span><span class="tag">Exterior</span></div><button class="btn btn-blue" onclick="openCategory('Paint')">View Paint Products</button></div>
+   </article>
+  </div>
+ </div>
+</section>
 
-  <section id="cart" class="page">
-    <button class="btn back" onclick="showPage('products')">← Continue Shopping</button>
-    <h2>Your Shopping Cart 🛒</h2>
-    <div id="cartItems"></div>
-    <h3 id="total">Total: ₹0</h3>
-    <p class="muted">Final prices, stock and delivery charges will be confirmed by the shop.</p>
-    <div class="actions">
-      <input id="customerName" placeholder="Your name">
-      <input id="customerAddress" placeholder="Delivery location">
-    </div>
-    <div class="actions">
-      <button class="btn" onclick="sendOrder()">Order on WhatsApp</button>
-      <button class="btn" onclick="clearCart()">Clear Cart</button>
-    </div>
-  </section>
+<section id="catalog" class="catalog-section">
+ <div class="wrap">
+  <div class="section-head"><span class="kicker">Product listing</span><h2>Choose products for your order</h2><p>Choose Steel, Cement or Paint, add products to cart and send the order on WhatsApp.</p></div>
+  <div class="catalog-tools">
+   <div class="category-tabs">
+    <button class="category-tab active" onclick="showCategory('All',this)">All Products</button>
+    <button class="category-tab" onclick="showCategory('Steel',this)">Steel</button>
+    <button class="category-tab" onclick="showCategory('Cement',this)">Cement</button>
+    <button class="category-tab" onclick="showCategory('Paint',this)">Paint</button>
+   </div>
+   <input id="catalogSearch" class="catalog-search" type="search" placeholder="Search product or brand..." oninput="renderCatalog()">
+  </div>
+  <div id="catalogGrid" class="catalog-grid"></div>
+ </div>
+</section>
+
+<section id="cart" class="cart-section">
+ <div class="wrap">
+  <div class="section-head"><span class="kicker">Your cart</span><h2>Review your order</h2><p>Our team will confirm current price and availability.</p></div>
+  <div class="cart-layout">
+   <div class="cart-panel">
+    <div id="cartItems"><p class="empty-cart">Your cart is empty. Browse products and tap Add to Cart.</p></div>
+    <div class="cart-total"><b>Items: <span id="cartItemCount">0</span></b><button class="btn btn-primary" type="button" onclick="clearCart()">Clear Cart</button></div>
+   </div>
+   <form class="enquiry-box order-form" id="orderForm">
+    <h3>Delivery / Contact Details</h3>
+    <label for="orderName">Your name</label><input id="orderName" required placeholder="Enter your name">
+    <label for="orderPhone">Your mobile number</label><input id="orderPhone" required inputmode="tel" pattern="[0-9 +()-]{8,16}" placeholder="Enter your mobile number">
+    <label for="orderAddress">Delivery address / area</label><textarea id="orderAddress" required placeholder="Enter delivery address or area"></textarea>
+    <label for="orderNotes">Additional instructions (optional)</label><textarea id="orderNotes" placeholder="Preferred brand, delivery date, etc."></textarea>
+    <button class="btn btn-green" type="submit">Send Order on WhatsApp ↗</button>
+    <p class="order-note">WhatsApp will open with your order details ready to send. No online payment is taken.</p>
+   </form>
+  </div>
+ </div>
+</section>
+
+<section class="why" id="about">
+ <div class="wrap">
+  <div class="section-head"><span class="kicker">Why Saravana Steel Company</span><h2>Helpful service for your building needs</h2><p>We make it easy to enquire before you buy.</p></div>
+  <div class="why-grid">
+   <div class="why-item"><h3>Quick WhatsApp enquiry</h3><p>Send product, quantity and preferred brand to ask for a current quote.</p></div>
+   <div class="why-item"><h3>Building materials</h3><p>Explore steel, cement and paint categories in one place.</p></div>
+   <div class="why-item"><h3>Personal assistance</h3><p>Contact us to discuss your project and product availability.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="wrap">
+  <div class="section-head"><span class="kicker">Contact us</span><h2>Ask for today's price</h2><p>Send your requirement directly to us on WhatsApp.</p></div>
+  <div class="contact-grid">
+   <div class="contact-card"><h3>Saravana Steel Company</h3>
+    <div class="contact-line">📍 <div><b>Visit our shop</b><span id="addressText"></span></div></div>
+    <div class="contact-line">📱 <div><b>Phone / WhatsApp</b><span id="phoneText"></span></div></div>
+    <div class="contact-line">🕒 <div><b>Business hours</b><span id="hoursText"></span></div></div>
+   </div>
+   <form class="enquiry-box" id="enquiryForm">
+    <h3>WhatsApp Price Enquiry</h3>
+    <label for="customerName">Your name</label><input id="customerName" required placeholder="Enter your name">
+    <label for="product">Product</label><select id="product"><option>Steel</option><option>Cement</option><option>Paint</option><option>Multiple products</option></select>
+    <label for="quantity">Quantity / size</label><input id="quantity" placeholder="e.g. 1 ton / 50 bags / 20 litres">
+    <label for="brand">Preferred brand (optional)</label><input id="brand" placeholder="Enter preferred brand">
+    <label for="details">Additional details</label><textarea id="details" placeholder="Tell us your requirement"></textarea>
+    <button class="btn btn-green" type="submit">Send Enquiry on WhatsApp ↗</button>
+   </form>
+  </div>
+ </div>
+</section>
+
+<div class="cta"><div class="wrap"><div class="cta-panel"><div><h2>Planning your next project?</h2><p>Ask us for current prices and availability.</p></div><a class="btn btn-primary" href="#contact" onclick="setPage('home','contact')">Request a Quote</a></div></div></div>
 </main>
 
-<footer>
-  <strong>SARAVANA STEEL COMPANY</strong><br><br>
-  No.7, New Goller Street, Opp to Bus Stand,<br>
-  Alangayam - 635701<br><br>
-  WhatsApp: 7010795644
-</footer>
+<footer><div class="wrap footer-inner"><div><b>SARAVANA STEEL COMPANY</b><div class="footer-muted">Steel · Cement · Paint</div></div><div class="footer-muted">© <span id="year"></span> Saravana Steel Company</div></div></footer>
 
 <script>
-const WHATSAPP = "917010795644";
+const BUSINESS_WHATSAPP = "917010795644";
+const BUSINESS_ADDRESS = "No.7, New Goller Street, Opp. to Bus Stand, Alangayam - 635701";
+const BUSINESS_HOURS = "Please contact us for current business hours";
 
-const products = [
- {id:1,name:"TMT Steel Bars",cat:"Steel",price:0,unit:"Kg",img:"https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=500&q=80"},
- {id:2,name:"Steel Rods",cat:"Steel",price:0,unit:"Kg",img:"https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=500&q=80"},
- {id:3,name:"Cement Bags",cat:"Cement",price:0,unit:"Bag",img:"https://images.unsplash.com/photo-1513467655676-561b7d489a88?auto=format&fit=crop&w=500&q=80"},
- {id:4,name:"PPC Cement",cat:"Cement",price:0,unit:"Bag",img:"https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=500&q=80"},
- {id:5,name:"Interior Wall Paint",cat:"Paint",price:0,unit:"Litre",img:"https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=500&q=80"},
- {id:6,name:"Exterior Paint",cat:"Paint",price:0,unit:"Litre",img:"https://images.unsplash.com/photo-1562184552-997c461abbe6?auto=format&fit=crop&w=500&q=80"}
+document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("addressText").textContent = BUSINESS_ADDRESS;
+document.getElementById("hoursText").textContent = BUSINESS_HOURS;
+document.getElementById("phoneText").textContent = "+" + BUSINESS_WHATSAPP;
+
+function openWhatsApp(message){
+ window.open("https://wa.me/"+BUSINESS_WHATSAPP+"?text="+encodeURIComponent(message),"_blank","noopener");
+}
+document.getElementById("enquiryForm").addEventListener("submit",function(e){
+ e.preventDefault();
+ const name=document.getElementById("customerName").value.trim();
+ const product=document.getElementById("product").value;
+ const quantity=document.getElementById("quantity").value.trim()||"Not specified";
+ const brand=document.getElementById("brand").value.trim()||"No preference";
+ const details=document.getElementById("details").value.trim()||"None";
+ openWhatsApp("Hello Saravana Steel Company,\nI would like to enquire about current prices.\nName: "+name+"\nProduct: "+product+"\nQuantity/size: "+quantity+"\nPreferred brand: "+brand+"\nDetails: "+details);
+});
+
+const PRODUCTS=[
+ {id:"steel-tmt",category:"Steel",name:"TMT Steel Bars",brand:"Multiple brands",unit:"Kg / Ton",desc:"Steel reinforcement bars for columns, beams and slabs.",visual:"steel"},
+ {id:"steel-ms",category:"Steel",name:"MS Angles & Channels",brand:"Ask for available sizes",unit:"Kg",desc:"Structural steel sections for construction and fabrication.",visual:"steel"},
+ {id:"steel-sheet",category:"Steel",name:"Steel Sheets",brand:"Multiple sizes",unit:"Sheet / Kg",desc:"Steel sheets for construction and fabrication.",visual:"steel"},
+ {id:"cement-ppc",category:"Cement",name:"PPC Cement",brand:"Multiple brands",unit:"Bag",desc:"For masonry, plastering and general construction.",visual:"cement"},
+ {id:"cement-opc",category:"Cement",name:"OPC Cement",brand:"Multiple grades",unit:"Bag",desc:"Cement options for concrete and structural work.",visual:"cement"},
+ {id:"cement-special",category:"Cement",name:"Other Cement Requirements",brand:"Ask for availability",unit:"Bag",desc:"Tell us your preferred brand and project requirement.",visual:"cement"},
+ {id:"paint-interior",category:"Paint",name:"Interior Emulsion Paint",brand:"Multiple brands / colours",unit:"Litre / Bucket",desc:"Interior wall paint options for your preferred finish.",visual:"paint"},
+ {id:"paint-exterior",category:"Paint",name:"Exterior Paint",brand:"Multiple brands / colours",unit:"Litre / Bucket",desc:"Exterior coating options for weather protection.",visual:"paint"},
+ {id:"paint-primer",category:"Paint",name:"Primer & Putty",brand:"Multiple brands",unit:"Pack / Bucket",desc:"Surface preparation products for painting work.",visual:"paint"}
 ];
 
-let cart = [];
+let activeCategory="All";
+let cart=[];
 
-function showPage(page){
- document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
- document.getElementById(page).classList.add("active");
- document.querySelectorAll("nav button").forEach(b=>b.classList.remove("active"));
- const navId={home:"homeNav",products:"productsNav",cart:"cartNav"}[page];
- document.getElementById(navId).classList.add("active");
- if(page==="cart")renderCart();
- window.scrollTo(0,0);
+function productVisual(type){
+ if(type==="steel")return '<div class="product-visual"><div class="rods"><span class="rod"></span><span class="rod"></span><span class="rod"></span><span class="rod"></span><span class="rod"></span></div></div>';
+ if(type==="cement")return '<div class="product-visual cement"><div class="bags"><div class="bag">CEMENT</div><div class="bag">CEMENT</div></div></div>';
+ return '<div class="product-visual paint"><div class="cans"><div class="can"></div><div class="can"></div><div class="can"></div></div></div>';
 }
-
-function openCategory(cat){
- showPage("products");
- const list=cat==="All"?products:products.filter(p=>p.cat===cat);
- document.getElementById("productList").innerHTML=list.map(p=>`
- <div class="product">
- <img src="${p.img}" alt="${p.name}" loading="lazy">
- <h3>${p.name}</h3>
- <div class="muted">${p.cat} • ${p.unit}</div>
- <div class="price">${p.price>0?"₹"+p.price+"/"+p.unit:"Price on Request"}</div>
- <button class="btn" onclick="addToCart(${p.id})">Add to Cart +</button>
- </div>`).join("");
+function setPage(page,target){
+ document.body.classList.remove("view-products","view-cart");
+ if(page==="products")document.body.classList.add("view-products");
+ if(page==="cart")document.body.classList.add("view-cart");
+ window.scrollTo({top:0,behavior:"smooth"});
+ if(target)setTimeout(()=>document.getElementById(target)?.scrollIntoView({behavior:"smooth"}),60);
+ history.replaceState(null,"",page==="products"?"#catalog":page==="cart"?"#cart":"#home");
 }
-
+function openCategory(category){
+ setPage("products");
+ const button=[...document.querySelectorAll(".category-tab")].find(b=>b.textContent.trim()===category);
+ showCategory(category,button);
+ document.getElementById("catalog").scrollIntoView({behavior:"smooth"});
+}
+function showCategory(category,button){
+ activeCategory=category;
+ document.querySelectorAll(".category-tab").forEach(b=>b.classList.remove("active"));
+ if(button)button.classList.add("active");
+ renderCatalog();
+}
+function renderCatalog(){
+ const search=(document.getElementById("catalogSearch").value||"").toLowerCase();
+ const list=PRODUCTS.filter(p=>(activeCategory==="All"||p.category===activeCategory)&&[p.name,p.category,p.brand,p.desc].join(" ").toLowerCase().includes(search));
+ document.getElementById("catalogGrid").innerHTML=list.length?list.map(p=>`
+ <article class="catalog-card">
+  <div class="catalog-image">${productVisual(p.visual)}</div>
+  <div class="catalog-info">
+   <span class="tag">${p.category}</span><h3>${p.name}</h3><p>${p.desc}</p>
+   <div class="catalog-meta"><span>${p.brand}</span><span>${p.unit}</span></div>
+   <div class="ask-price">Price: Contact us</div>
+   <div class="add-cart-row"><input class="qty-input" type="number" id="qty-${p.id}" min="1" step="1" value="1" aria-label="Quantity for ${p.name}"><button class="btn btn-blue" type="button" onclick="addToCart('${p.id}')">Add to Cart +</button></div>
+  </div>
+ </article>`).join(""):"<p>No matching products found.</p>";
+}
 function addToCart(id){
- const item=cart.find(p=>p.id===id);
- if(item)item.qty++;
- else cart.push({...products.find(p=>p.id===id),qty:1});
- updateCount();
- alert("Added to cart!");
+ const p=PRODUCTS.find(x=>x.id===id);
+ const qty=Math.max(1,parseInt(document.getElementById("qty-"+id).value,10)||1);
+ const existing=cart.find(x=>x.id===id);
+ if(existing)existing.qty+=qty;else cart.push({...p,qty});
+ renderCart();setPage("cart");
 }
-
-function updateCount(){
- document.getElementById("cartCount").textContent=cart.reduce((s,p)=>s+p.qty,0);
+function changeCartQty(id,delta){
+ const item=cart.find(x=>x.id===id);if(!item)return;
+ item.qty+=delta;if(item.qty<1)cart=cart.filter(x=>x.id!==id);
+ renderCart();
 }
-
+function removeFromCart(id){cart=cart.filter(x=>x.id!==id);renderCart();}
+function clearCart(){cart=[];renderCart();}
 function renderCart(){
- const el=document.getElementById("cartItems");
- if(!cart.length){
-  el.innerHTML="<p>Your cart is empty. Please explore our products.</p>";
-  document.getElementById("total").textContent="Total: Price to be confirmed";
-  return;
- }
- el.innerHTML=cart.map(p=>`
- <div class="cart-item">
- <div><strong>${p.name}</strong><div class="muted">${p.cat} • ${p.unit}</div>
- <div class="actions">
- <button onclick="changeQty(${p.id},-1)">−</button>
- <span>${p.qty}</span>
- <button onclick="changeQty(${p.id},1)">+</button>
- </div></div>
- <button onclick="removeItem(${p.id})">Remove</button>
- </div>`).join("");
- document.getElementById("total").textContent="Total: Price to be confirmed by shop";
+ const count=cart.reduce((n,p)=>n+p.qty,0);
+ document.getElementById("cartCount").textContent=count;
+ document.getElementById("cartItemCount").textContent=count;
+ const root=document.getElementById("cartItems");
+ root.innerHTML=cart.length?cart.map(p=>`
+ <div class="cart-line">
+  <div><b>${p.name}</b><small>${p.category} · ${p.brand} · ${p.unit}</small></div>
+  <div><button type="button" onclick="changeCartQty('${p.id}',-1)">−</button> <b>${p.qty}</b> <button type="button" onclick="changeCartQty('${p.id}',1)">+</button></div>
+  <button type="button" onclick="removeFromCart('${p.id}')">Remove</button>
+ </div>`).join(""):'<p class="empty-cart">Your cart is empty. Browse products and tap Add to Cart.</p>';
 }
+document.getElementById("orderForm").addEventListener("submit",function(e){
+ e.preventDefault();
+ if(!cart.length){alert("Please add at least one product to your cart.");setPage("products");return;}
+ const name=document.getElementById("orderName").value.trim();
+ const phone=document.getElementById("orderPhone").value.trim();
+ const address=document.getElementById("orderAddress").value.trim();
+ const notes=document.getElementById("orderNotes").value.trim()||"None";
+ const items=cart.map((p,i)=>`${i+1}. ${p.name} | ${p.category} | Qty: ${p.qty} ${p.unit} | Brand: ${p.brand}`).join("\n");
+ const message=`NEW WEBSITE ORDER - SARAVANA STEEL COMPANY
 
-function changeQty(id,n){
- const p=cart.find(x=>x.id===id);
- if(p)p.qty+=n;
- cart=cart.filter(x=>x.qty>0);
- updateCount();renderCart();
-}
-function removeItem(id){
- cart=cart.filter(p=>p.id!==id);updateCount();renderCart();
-}
-function clearCart(){
- cart=[];updateCount();renderCart();
-}
+Customer: ${name}
+Mobile: ${phone}
+Delivery address: ${address}
 
-function sendOrder(){
- if(!cart.length){alert("Please add products to your cart first.");return;}
- const name=document.getElementById("customerName").value.trim();
- const address=document.getElementById("customerAddress").value.trim();
- if(!name){alert("Please enter your name.");return;}
- let msg="NEW PRODUCT ORDER - SARAVANA STEEL COMPANY%0A";
- msg+="Customer: "+encodeURIComponent(name)+"%0A";
- msg+="Delivery location: "+encodeURIComponent(address||"Not provided")+"%0A%0A";
- cart.forEach((p,i)=>{
-  msg+=(i+1)+". "+encodeURIComponent(p.name)+" ("+p.cat+") - Qty: "+p.qty+" "+p.unit+"%0A";
- });
- msg+="%0APrice: Please confirm current rates.%0A";
- msg+="Please contact me to confirm this order.";
- window.open("https://wa.me/"+WHATSAPP+"?text="+msg,"_blank");
-}
+ORDER ITEMS:
+${items}
 
-openCategory("All");
+Additional instructions: ${notes}
+
+Please confirm price, stock and delivery.`;
+ openWhatsApp(message);
+});
+renderCatalog();
+renderCart();
 </script>
 </body>
 </html>
