@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1730">
+  <link rel="icon" type="image/png" href="saravana-steel-logo.png">
+  <link rel="apple-touch-icon" href="saravana-steel-logo.png">
+  <meta name="description" content="Saravana Steel Company — steel, cement and paint for your construction needs. Enquire for current prices on WhatsApp.">
+  <title>Saravana Steel Company | Steel, Cement & Paint</title>
+  <style>
+    :root{--navy:#0b1730;--blue:#123b68;--bright:#2877c7;--steel:#dce5ee;--ink:#142238;--muted:#65748a;--white:#fff;--bg:#f5f8fc;--line:#e2e9f1;--green:#16864a}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1160px,92%);margin:auto}
+    header{background:rgba(11,23,48,.97);color:#fff;position:sticky;top:0;z-index:10;box-shadow:0 8px 24px #08142b20}
+    .nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.2px}
+    .logo{width:54px;height:54px;flex:0 0 54px;object-fit:contain;border-radius:10px;background:#05070a;border:1px solid #ffffff50;display:block}.brand{gap:12px}
+    .brand small{display:block;color:#b8c9dd;font-weight:500;font-size:11px;letter-spacing:1.7px;text-transform:uppercase}
+    nav{display:flex;align-items:center;gap:24px;font-size:14px;color:#e4edf8}nav a:hover{color:#8bc6ff}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 17px;border-radius:10px;font-weight:700;font-size:14px;border:0;cursor:pointer;transition:.2s}
+    .btn-primary{background:#fff;color:var(--navy)}.btn-blue{background:var(--bright);color:#fff}.btn-green{background:var(--green);color:#fff}.btn:hover{transform:translateY(-1px);filter:brightness(.97)}
+    .hero{background:radial-gradient(circle at 80% 15%,#2b669b 0,transparent 31%),linear-gradient(120deg,#0b1730 0%,#123b68 62%,#1b5684 100%);color:#fff;overflow:hidden}
+    .hero-inner{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:40px;padding:76px 0 82px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;color:#a9d6ff;font-size:12px;text-transform:uppercase;letter-spacing:2px;font-weight:800}
+    h1{font-size:clamp(38px,5.2vw,64px);line-height:1.06;letter-spacing:-1.8px;margin:17px 0 20px}
+    .hero p{font-size:17px;max-width:580px;color:#d6e4f4;margin:0 0 27px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-note{font-size:12px!important;color:#b6c9dd!important;margin-top:15px!important}
+    .hero-art{position:relative;min-height:310px;display:grid;place-items:center}
+    .steel-orb{width:min(340px,80vw);aspect-ratio:1;border-radius:18px;background:#05070a url("saravana-steel-logo.png") center/contain no-repeat;box-shadow:0 28px 60px #06132670;position:relative;display:grid;place-items:center;overflow:hidden}
+    .steel-orb:before{content:none}
+    .steel-orb:after{content:none}
+    .floating-tag{position:absolute;bottom:18px;left:0;background:#fff;color:var(--navy);padding:14px 18px;border-radius:13px;box-shadow:0 12px 32px #06132655;font-weight:800}
+    .floating-tag small{display:block;color:var(--muted);font-weight:500;font-size:11px}
+    .trust-strip{background:#fff;border-bottom:1px solid var(--line)}.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:22px 0}
+    .trust-item{display:flex;align-items:center;gap:12px;color:var(--blue);font-size:14px;font-weight:700}.trust-icon{width:38px;height:38px;border-radius:11px;background:#eaf3fc;display:grid;place-items:center;font-size:19px}
+    section{padding:74px 0}.section-head{text-align:center;max-width:700px;margin:0 auto 34px}.kicker{font-size:12px;color:var(--bright);font-weight:800;text-transform:uppercase;letter-spacing:2px}
+    h2{font-size:clamp(28px,3.4vw,40px);line-height:1.15;letter-spacing:-.8px;margin:10px 0 12px;color:var(--navy)}.section-head p{color:var(--muted);margin:0}
+    .categories{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .product-card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 8px 28px #0b17300a;transition:.2s;display:flex;flex-direction:column}
+    .product-card:hover{transform:translateY(-4px);box-shadow:0 16px 34px #0b173014}
+    .product-visual{height:180px;display:grid;place-items:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#e7eff7,#c7d6e5)}
+    .product-visual.cement{background:linear-gradient(135deg,#eef1f4,#c5cdd6)}.product-visual.paint{background:linear-gradient(135deg,#e6f2ff,#c6e0fb)}
+    .visual-label{position:absolute;left:16px;top:15px;padding:6px 10px;background:#ffffffd9;color:var(--blue);border-radius:20px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+    .rods{display:flex;gap:9px;transform:rotate(-18deg)}.rod{width:17px;height:160px;border-radius:8px;background:repeating-linear-gradient(0deg,#8a9cac 0 5px,#cbd5df 5px 9px);box-shadow:inset -4px 0 5px #354b60aa,4px 5px 7px #526b8140}
+    .bags{display:flex;gap:10px;align-items:end}.bag{width:82px;height:120px;background:linear-gradient(90deg,#a9b2bb,#f3f5f7 25%,#b6c0c9);border:1px solid #9aa7b3;border-radius:5px 5px 10px 10px;box-shadow:3px 6px 10px #33445525;display:grid;place-items:center;color:#34495c;font-size:11px;font-weight:900;text-align:center;padding:8px;transform:rotate(-4deg)}.bag:nth-child(2){height:136px;transform:rotate(4deg)}
+    .cans{display:flex;gap:14px;align-items:end}.can{width:65px;height:105px;border-radius:9px 9px 12px 12px;background:linear-gradient(90deg,#174b7d,#3185c8 35%,#0d3a66);box-shadow:4px 7px 12px #27445c30;position:relative}.can:nth-child(2){height:130px;background:linear-gradient(90deg,#d8e3ed,#fff 35%,#9bb4ca)}.can:nth-child(3){height:90px;background:linear-gradient(90deg,#bf7422,#f6bd57 35%,#9c5b1c)}.can:before{content:"";position:absolute;top:-8px;left:8px;right:8px;height:10px;border-radius:4px;background:#66798a;border:1px solid #fff}
+    .card-body{padding:22px;display:flex;flex-direction:column;flex:1}.card-body h3{margin:0 0 8px;font-size:21px;color:var(--navy)}.card-body p{color:var(--muted);font-size:14px;margin:0 0 18px}.tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px}.tag{background:#f0f5fa;color:#3c5873;border-radius:6px;padding:5px 8px;font-size:11px;font-weight:700}.card-body .btn{margin-top:auto}
+    .why{background:#edf3f9}.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.why-item{padding:24px;background:#fff;border:1px solid var(--line);border-radius:15px}.why-item .big-icon{font-size:25px}.why-item h3{margin:12px 0 7px;color:var(--navy)}.why-item p{margin:0;color:var(--muted);font-size:14px}
+    .cta{padding:0 0 76px;background:#edf3f9}.cta-panel{background:linear-gradient(120deg,#0b1730,#174d7d);color:#fff;border-radius:22px;padding:38px 42px;display:flex;align-items:center;justify-content:space-between;gap:25px}.cta-panel h2{color:#fff;margin:0 0 8px}.cta-panel p{margin:0;color:#d2e1f1}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}.contact-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px}.contact-card h3{margin-top:0;color:var(--navy)}.contact-line{display:flex;gap:12px;margin:16px 0;color:var(--muted)}.contact-line b{color:var(--ink);display:block}
+    .enquiry-box{background:#f4f8fc;border:1px solid var(--line);border-radius:16px;padding:25px}.enquiry-box label{display:block;font-size:13px;font-weight:700;margin:12px 0 6px}.enquiry-box input,.enquiry-box select,.enquiry-box textarea{width:100%;padding:12px;border:1px solid #ccd8e4;border-radius:9px;font:inherit;background:#fff;color:var(--ink)}.enquiry-box textarea{min-height:90px;resize:vertical}.enquiry-box .btn{width:100%;margin-top:15px}
+    footer{background:#081326;color:#d3deea;padding:27px 0;font-size:13px}.footer-inner{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}.footer-muted{color:#8fa3ba}
+
+    .catalog-section{background:#f5f8fc}.catalog-tools{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap;margin:0 0 22px}.category-tabs{display:flex;gap:8px;flex-wrap:wrap}.category-tab{border:1px solid #d5e0eb;background:#fff;color:var(--navy);padding:10px 16px;border-radius:999px;font-weight:700;cursor:pointer}.category-tab.active{background:var(--navy);color:#fff;border-color:var(--navy)}.catalog-search{min-width:230px;max-width:100%;padding:11px 14px;border:1px solid #ccd8e4;border-radius:10px;font:inherit}.catalog-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.catalog-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 8px 25px #0b17300a}.catalog-image{height:170px;display:grid;place-items:center;background:#e9f1f9;overflow:hidden}.catalog-image img{width:100%;height:100%;object-fit:cover}.catalog-image .product-visual{width:100%;height:100%;border-radius:0}.catalog-info{padding:17px;display:flex;flex-direction:column;gap:8px;flex:1}.catalog-info h3{margin:0;color:var(--navy);font-size:18px}.catalog-info p{margin:0;color:var(--muted);font-size:13px}.catalog-meta{display:flex;justify-content:space-between;gap:8px;color:#52657a;font-size:12px}.ask-price{font-weight:800;color:var(--blue)}.add-cart-row{display:flex;gap:8px;margin-top:auto;padding-top:8px}.qty-input{width:72px;padding:10px;border:1px solid #ccd8e4;border-radius:8px;font:inherit}.add-cart-row .btn{flex:1}.cart-section{background:#edf3f9}.cart-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:start}.cart-panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px}.cart-line{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;padding:13px 0;border-bottom:1px solid var(--line)}.cart-line:last-child{border-bottom:0}.cart-line b{display:block;color:var(--navy)}.cart-line small{color:var(--muted)}.cart-line button{border:0;background:#fff0f0;color:#a22;padding:7px 10px;border-radius:7px;font-weight:700}.cart-total{display:flex;align-items:center;justify-content:space-between;padding-top:16px}.empty-cart{color:var(--muted);padding:12px 0}.order-form{margin:0}.order-note{font-size:11px;color:#718198;margin:10px 0 0}#cartCount{display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 5px;background:#2877c7;color:#fff;border-radius:99px;font-size:11px}
+    @media(max-width:800px){.catalog-grid{grid-template-columns:1fr}.cart-layout{grid-template-columns:1fr}.catalog-tools{align-items:stretch}.catalog-search{width:100%;min-width:0}.cart-line{grid-template-columns:1fr auto}.cart-line button{grid-column:2}.category-tabs{width:100%}.category-tab{flex:1;padding:9px 10px}}
+
+    @media(max-width:800px){nav{gap:13px}nav a:not(.btn){display:none}.hero-inner{grid-template-columns:1fr;padding:56px 0 65px;gap:10px}.hero-art{min-height:270px}.steel-orb{width:250px}.trust-grid{grid-template-columns:1fr;gap:12px}.categories,.why-grid{grid-template-columns:1fr}.product-visual{height:190px}.cta-panel{padding:28px;align-items:flex-start;flex-direction:column}.contact-grid{grid-template-columns:1fr}section{padding:58px 0}}
+    @media(min-width:801px) and (max-width:1020px){.categories{gap:12px}.card-body{padding:17px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home" aria-label="Saravana Steel Company home">
+      <img class="logo" src="saravana-steel-logo.png" alt="Saravana Steel Company logo"><span>SARAVANA STEEL COMPANY<small>Steel · Cement · Paint</small></span>
+    </a>
+    <nav><a href="#products">Products</a><a href="#catalog">Product Listing</a><a href="#cart">Cart <span id="cartCount">0</span></a><a href="#about">Why Choose Us</a><a href="#contact">Contact</a><a class="btn btn-primary" href="#catalog">Shop Products</a></nav>
+  </div>
+</header>
+<main>
+  <section class="hero" id="home" style="padding:0">
+    <div class="wrap hero-inner">
+      <div>
+        <span class="eyebrow">● Your construction materials partner</span>
+        <h1>Build strong.<br>Build with confidence.</h1>
+        <p>Your destination for steel, cement and paint for construction needs. Tell us what you need and request the latest price directly on WhatsApp.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="#products">Explore Products&nbsp; ↓</a><a class="btn btn-green" href="#contact">✆ &nbsp;Ask Price on WhatsApp</a></div>
+        <p class="hero-note">Prices and availability may change. Contact us for today's rates.</p>
+      </div>
+      <div class="hero-art" aria-hidden="true"><div class="steel-orb"></div></div>
+    </div>
+  </section>
+  <div class="trust-strip"><div class="wrap trust-grid">
+    <div class="trust-item"><span class="trust-icon">▥</span>Steel for construction</div>
+    <div class="trust-item"><span class="trust-icon">▦</span>Cement for every stage</div>
+    <div class="trust-item"><span class="trust-icon">◒</span>Paint for the finishing touch</div>
+  </div></div>
+  <section id="products">
+    <div class="wrap">
+      <div class="section-head"><span class="kicker">Our product range</span><h2>Everything you need to build</h2><p>Browse our main product categories and ask us for current prices, brands and availability.</p></div>
+      <div class="categories">
+        <article class="product-card">
+          <div class="product-visual"><span class="visual-label">Structural strength</span><div class="rods"><span class="rod"></span><span class="rod"></span><span class="rod"></span><span class="rod"></span><span class="rod"></span></div></div>
+          <div class="card-body"><h3>Steel</h3><p>TMT bars and steel products for foundations, columns, beams and slabs.</p><div class="tags"><span class="tag">TMT Bars</span><span class="tag">Construction Steel</span><span class="tag">Multiple sizes</span></div><button class="btn btn-blue" onclick="openCategory('Steel')">Enquire for Steel Price ↗</button></div>
+        </article>
+        <article class="product-card">
+          <div class="product-visual cement"><span class="visual-label">Strong foundations</span><div class="bags"><div class="bag">CEMENT<br>BUILD STRONG</div><div class="bag">CEMENT<br>QUALITY</div></div></div>
+          <div class="card-body"><h3>Cement</h3><p>Cement options for foundation, brickwork, plastering and concrete work.</p><div class="tags"><span class="tag">Cement Bags</span><span class="tag">Different brands</span><span class="tag">Construction use</span></div><button class="btn btn-blue" onclick="openCategory('Cement')">Enquire for Cement Price ↗</button></div>
+        </article>
+        <article class="product-card">
+          <div class="product-visual paint"><span class="visual-label">Finishing touch</span><div class="cans"><div class="can"></div><div class="can"></div><div class="can"></div></div></div>
+          <div class="card-body"><h3>Paint</h3><p>Paint options to help finish and protect interior and exterior surfaces.</p><div class="tags"><span class="tag">Interior</span><span class="tag">Exterior</span><span class="tag">Colour options</span></div><button class="btn btn-blue" onclick="openCategory('Paint')">Enquire for Paint Price ↗</button></div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section id="catalog" class="catalog-section">
+    <div class="wrap">
+      <div class="section-head"><span class="kicker">Product listing</span><h2>Choose products for your order</h2><p>Steel, cement and paint have separate listings. Add items to your cart and send the full order directly to us on WhatsApp.</p></div>
+      <div class="catalog-tools"><div class="category-tabs" role="group" aria-label="Product category"><button class="category-tab active" onclick="showCategory('All',this)">All Products</button><button class="category-tab" onclick="showCategory('Steel',this)">Steel</button><button class="category-tab" onclick="showCategory('Cement',this)">Cement</button><button class="category-tab" onclick="showCategory('Paint',this)">Paint</button></div><input id="catalogSearch" class="catalog-search" type="search" placeholder="Search product or brand..." oninput="renderCatalog()"></div>
+      <div id="catalogGrid" class="catalog-grid"></div>
+    </div>
+  </section>
+  <section id="cart" class="cart-section">
+    <div class="wrap"><div class="section-head"><span class="kicker">Your cart</span><h2>Review your order</h2><p>Prices are confirmed by our team. Submit your cart to send the product list, quantities and your contact details on WhatsApp.</p></div>
+      <div class="cart-layout"><div class="cart-panel"><div id="cartItems"><p class="empty-cart">Your cart is empty. Browse the product listing and tap “Add to Cart”.</p></div><div class="cart-total"><b>Items: <span id="cartItemCount">0</span></b><button type="button" class="btn btn-primary" onclick="clearCart()">Clear Cart</button></div></div>
+      <form class="enquiry-box order-form" id="orderForm"><h3 style="margin:0;color:var(--navy)">Delivery / Contact Details</h3><label for="orderName">Your name</label><input id="orderName" required placeholder="Enter your name"><label for="orderPhone">Your mobile number</label><input id="orderPhone" required inputmode="tel" pattern="[0-9 +()-]{8,16}" placeholder="Enter your mobile number"><label for="orderAddress">Delivery address / area</label><textarea id="orderAddress" required placeholder="Enter delivery address or area"></textarea><label for="orderNotes">Additional instructions (optional)</label><textarea id="orderNotes" placeholder="Preferred brand, delivery date, etc."></textarea><button class="btn btn-green" type="submit">Send Order on WhatsApp ↗</button><p class="order-note">This sends a WhatsApp message with your order details. No online payment is taken; our team will confirm availability, price and delivery.</p></form></div>
+    </div>
+  </section>
+  <section class="why" id="about">
+    <div class="wrap"><div class="section-head"><span class="kicker">Why Saravana Steel Company</span><h2>Helpful service for your building needs</h2><p>We make it easy to enquire before you buy.</p></div>
+      <div class="why-grid">
+        <div class="why-item"><span class="big-icon">💬</span><h3>Quick WhatsApp enquiry</h3><p>Send your product, quantity and preferred brand to ask for a current quote.</p></div>
+        <div class="why-item"><span class="big-icon">🏗️</span><h3>Key building materials</h3><p>Explore steel, cement and paint categories in one convenient place.</p></div>
+        <div class="why-item"><span class="big-icon">🤝</span><h3>Personal assistance</h3><p>Contact our team to discuss your project requirements and product availability.</p></div>
+      </div>
+    </div>
+  </section>
+  <section id="contact">
+    <div class="wrap"><div class="section-head"><span class="kicker">Contact us</span><h2>Ask for today's price</h2><p>Fill in your requirement and send it directly to us on WhatsApp.</p></div>
+      <div class="contact-grid">
+        <div class="contact-card"><h3>Saravana Steel Company</h3>
+          <div class="contact-line"><span>📍</span><div><b>Visit our shop</b><span id="addressText">Add your full shop address here</span></div></div>
+          <div class="contact-line"><span>📱</span><div><b>Phone / WhatsApp</b><span id="phoneText">Add your business phone number</span></div></div>
+          <div class="contact-line"><span>🕒</span><div><b>Business hours</b><span id="hoursText">Add your opening hours</span></div></div>
+          <p style="font-size:12px;color:#7a899a;margin-top:24px">Please confirm current rates, brand availability and delivery details with us.</p>
+        </div>
+        <form class="enquiry-box" id="enquiryForm">
+          <h3 style="margin:0;color:var(--navy)">WhatsApp Price Enquiry</h3>
+          <label for="customerName">Your name</label><input id="customerName" name="customerName" placeholder="Enter your name" required>
+          <label for="product">Product</label><select id="product" name="product"><option>Steel</option><option>Cement</option><option>Paint</option><option>Multiple products</option></select>
+          <label for="quantity">Quantity / size</label><input id="quantity" name="quantity" placeholder="e.g. 1 ton / 50 bags / 20 litres">
+          <label for="brand">Preferred brand (optional)</label><input id="brand" name="brand" placeholder="Enter brand if you have one in mind">
+          <label for="details">Additional details</label><textarea id="details" name="details" placeholder="Tell us about your requirement"></textarea>
+          <button class="btn btn-green" type="submit">Send Enquiry on WhatsApp ↗</button>
+          <p style="font-size:11px;color:#7a899a;margin:10px 0 0">This opens WhatsApp with your message ready to send. No payment is taken on this website.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+  <div class="cta"><div class="wrap"><div class="cta-panel"><div><h2>Planning your next project?</h2><p>Ask us for current prices and product availability.</p></div><a class="btn btn-primary" href="#contact">Request a Quote ↗</a></div></div></div>
+</main>
+<footer><div class="wrap footer-inner"><div><b>SARAVANA STEEL COMPANY</b><div class="footer-muted">Steel · Cement · Paint</div></div><div class="footer-muted">© <span id="year"></span> Saravana Steel Company. All rights reserved.</div></div></footer>
+<script>
+  // SETUP REQUIRED: Replace the sample values below before publishing.
+  // Use country code + number, digits only. Example: 919876543210
+  const BUSINESS_WHATSAPP = "917010795644";
+  const BUSINESS_ADDRESS = "No.7, New Goller Street, Opp. to Bus Stand, Alangayam - 635701";
+  const BUSINESS_HOURS = "Please contact us for current business hours";
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("addressText").textContent = BUSINESS_ADDRESS;
+  document.getElementById("hoursText").textContent = BUSINESS_HOURS;
+  document.getElementById("phoneText").textContent =
+    BUSINESS_WHATSAPP.includes("X") ? "Set your WhatsApp number in the website code" : "+" + BUSINESS_WHATSAPP;
+
+  function openWhatsApp(message) {
+    if (BUSINESS_WHATSAPP.includes("X") || BUSINESS_WHATSAPP.length < 11) {
+      alert("Before using WhatsApp enquiries, add your business WhatsApp number in index.html. Find BUSINESS_WHATSAPP near the bottom of the file.");
+      return;
+    }
+    window.open("https://wa.me/" + BUSINESS_WHATSAPP + "?text=" + encodeURIComponent(message), "_blank", "noopener");
+  }
+  function askPrice(product) {
+    document.getElementById("product").value = product;
+    document.getElementById("contact").scrollIntoView({behavior:"smooth"});
+    document.getElementById("customerName").focus({preventScroll:true});
+  }
+  document.getElementById("enquiryForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const name = document.getElementById("customerName").value.trim();
+    const product = document.getElementById("product").value;
+    const quantity = document.getElementById("quantity").value.trim() || "Not specified";
+    const brand = document.getElementById("brand").value.trim() || "No preference";
+    const details = document.getElementById("details").value.trim() || "None";
+    const message = "Hello Saravana Steel Company,%0A".replace("%0A","\n") +
+      "I would like to enquire about current prices.%0A".replace("%0A","\n") +
+      "Name: " + name + "\nProduct: " + product + "\nQuantity/size: " + quantity +
+      "\nPreferred brand: " + brand + "\nDetails: " + details;
+    openWhatsApp(message);
+  });
+
+  const PRODUCTS = [
+    {id:'steel-tmt',category:'Steel',name:'TMT Steel Bars',brand:'Multiple brands',unit:'Kg / Ton',desc:'Steel reinforcement bars for columns, beams and slabs.',visual:'steel'},
+    {id:'steel-ms',category:'Steel',name:'MS Angles & Channels',brand:'Ask for available sizes',unit:'Kg',desc:'Structural steel sections for fabrication and construction.',visual:'steel'},
+    {id:'steel-sheet',category:'Steel',name:'Steel Sheets',brand:'Multiple sizes',unit:'Sheet / Kg',desc:'Steel sheets for general construction and fabrication.',visual:'steel'},
+    {id:'cement-ppc',category:'Cement',name:'PPC Cement',brand:'Multiple brands',unit:'Bag',desc:'For masonry, plastering and general construction.',visual:'cement'},
+    {id:'cement-opc',category:'Cement',name:'OPC Cement',brand:'Multiple grades',unit:'Bag',desc:'Cement options for concrete and structural work.',visual:'cement'},
+    {id:'cement-special',category:'Cement',name:'Cement – Other Requirements',brand:'Ask for availability',unit:'Bag',desc:'Tell us your preferred brand and project requirement.',visual:'cement'},
+    {id:'paint-interior',category:'Paint',name:'Interior Emulsion Paint',brand:'Multiple brands / colours',unit:'Litre / Bucket',desc:'Interior wall paint options for your preferred finish.',visual:'paint'},
+    {id:'paint-exterior',category:'Paint',name:'Exterior Paint',brand:'Multiple brands / colours',unit:'Litre / Bucket',desc:'Exterior coating options for weather protection.',visual:'paint'},
+    {id:'paint-primer',category:'Paint',name:'Primer & Putty',brand:'Multiple brands',unit:'Pack / Bucket',desc:'Surface preparation products for painting work.',visual:'paint'}
+  ];
+  let activeCategory = 'All';
+  let cart = [];
+  function productVisual(type){
+    if(type==='steel') return '<div class="product-visual"><div class="rods"><span class="rod"></span><span class="rod"></span><span class="rod"></span><span class="rod"></span><span class="rod"></span></div></div>';
+    if(type==='cement') return '<div class="product-visual cement"><div class="bags"><div class="bag">CEMENT<br>BUILD STRONG</div><div class="bag">CEMENT<br>QUALITY</div></div></div>';
+    return '<div class="product-visual paint"><div class="cans"><div class="can"></div><div class="can"></div><div class="can"></div></div></div>';
+  }
+  function openCategory(category){const button=[...document.querySelectorAll('.category-tab')].find(b=>b.textContent.trim()===category);showCategory(category,button);document.getElementById('catalog').scrollIntoView({behavior:'smooth'});}
+  function showCategory(category,button){activeCategory=category;document.querySelectorAll('.category-tab').forEach(b=>b.classList.remove('active'));if(button)button.classList.add('active');renderCatalog();}
+  function renderCatalog(){
+    const q=(document.getElementById('catalogSearch').value||'').toLowerCase();
+    const list=PRODUCTS.filter(p=>(activeCategory==='All'||p.category===activeCategory)&&[p.name,p.category,p.brand,p.desc].join(' ').toLowerCase().includes(q));
+    document.getElementById('catalogGrid').innerHTML=list.length?list.map(p=>`<article class="catalog-card"><div class="catalog-image">${productVisual(p.visual)}</div><div class="catalog-info"><span class="tag">${p.category}</span><h3>${p.name}</h3><p>${p.desc}</p><div class="catalog-meta"><span>${p.brand}</span><span>${p.unit}</span></div><div class="ask-price">Price: Contact us</div><div class="add-cart-row"><input class="qty-input" type="number" id="qty-${p.id}" min="1" step="1" value="1" aria-label="Quantity for ${p.name}"><button class="btn btn-blue" type="button" onclick="addToCart('${p.id}')">Add to Cart +</button></div></div></article>`).join(''):'<p>No matching products. Try another search.</p>';
+  }
+  function addToCart(id){const p=PRODUCTS.find(x=>x.id===id);const qty=Math.max(1,parseInt(document.getElementById('qty-'+id).value,10)||1);const existing=cart.find(x=>x.id===id);if(existing)existing.qty+=qty;else cart.push({...p,qty});renderCart();document.getElementById('cart').scrollIntoView({behavior:'smooth'});}
+  function changeCartQty(id,delta){const item=cart.find(x=>x.id===id);if(!item)return;item.qty+=delta;if(item.qty<1)cart=cart.filter(x=>x.id!==id);renderCart();}
+  function removeFromCart(id){cart=cart.filter(x=>x.id!==id);renderCart();}
+  function clearCart(){cart=[];renderCart();}
+  function renderCart(){const count=cart.reduce((n,p)=>n+p.qty,0);document.getElementById('cartCount').textContent=count;document.getElementById('cartItemCount').textContent=count;const root=document.getElementById('cartItems');root.innerHTML=cart.length?cart.map(p=>`<div class="cart-line"><div><b>${p.name}</b><small>${p.category} · ${p.brand} · ${p.unit}</small></div><div><button type="button" onclick="changeCartQty('${p.id}',-1)" aria-label="Decrease quantity">−</button> <b>${p.qty}</b> <button type="button" onclick="changeCartQty('${p.id}',1)" aria-label="Increase quantity">+</button></div><button type="button" onclick="removeFromCart('${p.id}')">Remove</button></div>`).join(''):'<p class="empty-cart">Your cart is empty. Browse the product listing and tap “Add to Cart”.</p>';}
+  document.getElementById('orderForm').addEventListener('submit',function(e){e.preventDefault();if(!cart.length){alert('Please add at least one product to your cart first.');document.getElementById('catalog').scrollIntoView({behavior:'smooth'});return;}const name=document.getElementById('orderName').value.trim();const phone=document.getElementById('orderPhone').value.trim();const address=document.getElementById('orderAddress').value.trim();const notes=document.getElementById('orderNotes').value.trim()||'None';const lines=cart.map((p,i)=>`${i+1}. ${p.name} | Category: ${p.category} | Qty: ${p.qty} ${p.unit} | Brand: ${p.brand}`).join('\n');const message=`NEW WEBSITE ORDER - SARAVANA STEEL COMPANY
+
+Customer: ${name}
+Mobile: ${phone}
+Delivery area/address: ${address}
+
+ORDER ITEMS:
+${lines}
+
+Additional instructions: ${notes}
+
+Please confirm price, stock and delivery.`;openWhatsApp(message);});
+  renderCatalog();renderCart();
+
+</script>
+</body>
+</html>
